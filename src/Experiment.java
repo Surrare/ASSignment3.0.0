@@ -49,8 +49,11 @@ public class Experiment {
 				System.out.println(sortType + " sort (sorted): " + timeSorted + " ns");
 			}
 
-			// Поиск
-			int target = randomArr[size / 2]; // Середина массива
+			// Searching performance test
+			System.out.println("\n--- SEARCHING ---");
+			int target = randomArr[size / 2]; // Middle element as search target
+
+			// Linear search works on both sorted and unsorted arrays
 			for (String searchType : searchTypes) {
 				long timeRandom = measureSearchTime(randomArr, target, searchType);
 				long timeSorted = measureSearchTime(sortedArr, target, searchType);
