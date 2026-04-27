@@ -7,7 +7,7 @@ public class Experiment {
 		this.searcher = searcher;
 	}
 
-	// Измерение времени сортировки
+	// Measuring sorting time
 	public long measureSortTime(int[] arr, String type) {
 		int[] copy = arr.clone();
 		long start = System.nanoTime();
@@ -22,7 +22,7 @@ public class Experiment {
 		return end - start;
 	}
 
-	// Измерение времени поиска
+	// Measuring search time
 	public long measureSearchTime(int[] arr, int target, String type) {
 		int[] copy = arr.clone();
 		long start = System.nanoTime();
@@ -31,7 +31,7 @@ public class Experiment {
 		return end - start;
 	}
 
-	// Запуск всех экспериментов
+	// Launch all experiments
 	public void runAllExperiments() {
 		int[] sizes = {10, 100, 1000};
 		String[] sortTypes = {"basic", "advanced"};
@@ -41,7 +41,7 @@ public class Experiment {
 			int[] randomArr = sorter.generateRandomArray(size);
 			int[] sortedArr = sorter.generateSortedArray(size);
 
-			// Сортировка
+			// Sorting
 			for (String sortType : sortTypes) {
 				long timeRandom = measureSortTime(randomArr, sortType);
 				long timeSorted = measureSortTime(sortedArr, sortType);
@@ -55,10 +55,16 @@ public class Experiment {
 
 			// Linear search works on both sorted and unsorted arrays
 			for (String searchType : searchTypes) {
-				long timeRandom = measureSearchTime(randomArr, target, searchType);
-				long timeSorted = measureSearchTime(sortedArr, target, searchType);
-				System.out.println(searchType + " search (random): " + timeRandom + " ns");
-				System.out.println(searchType + " search (sorted): " + timeSorted + " ns");
+				if ("linear".equalsIgnoreCase(searchType)) {
+					long timeRandom = measureSearchTime(randomArr, target, searchType);
+					long timeSorted = measureSearchTime(sortedArr, target, searchType);
+					System.out.println(searchType + " search (random): " + timeRandom + " ns");
+					System.out.println(searchType + " search (sorted): " + timeSorted + " ns");
+				} else if ("binary".equalsIgnoreCase(searchType)) {
+					// Binary search requires sorted array
+					long timeSorted = measureSearchTime(sortedArr, target, searchType);
+					System.out.println(searchType + " search (sorted array only): " + timeSorted + " ns");
+				}
 			}
 		}
 	}

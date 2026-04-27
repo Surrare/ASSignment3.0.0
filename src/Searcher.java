@@ -19,7 +19,7 @@ public class Searcher {
 		return -1;
 	}
 
-	// Универсальный метод поиска по типу
+	//Universal search method by type
 	public int search(int[] arr, int target, String type) {
 		if ("linear".equalsIgnoreCase(type)) {
 			return linearSearch(arr, target);
