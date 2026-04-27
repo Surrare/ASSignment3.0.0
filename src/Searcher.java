@@ -7,7 +7,7 @@ public class Searcher {
 		return -1;
 	}
 
-	// Binary Search (array must be sorted)
+	//Binary Search
 	public int binarySearch(int[] arr, int target) {
 		int left = 0, right = arr.length - 1;
 		while (left <= right) {
