@@ -1,10 +1,10 @@
-Assignment 3: Algorithm Analysis
+## Assignment 3: Algorithm Analysis
 
-A. Project Overview
+## A. Project Overview
 
 Comparing the real-world execution times of basic vs advanced sorting and searching algorithms using `System.nanoTime()`.
 
-B. Algorithm Descriptions
+## B. Algorithm Descriptions
 
 Insertion Sort: Slides each element into its correct sorted position. Time: O(n²) average, O(n) best (sorted).
 
@@ -14,7 +14,7 @@ Linear Search: Checks every item one by one from start to finish. Time: O(n).
 
 Binary Search: Checks the middle element and throws away the wrong half. Time: O(log n).
 
-C. Results Summary
+## C. Results Summary
 
 (Note: Times in nanoseconds)
 
@@ -24,7 +24,7 @@ Large Arrays (1000 items): Merge Sort (~288k ns) destroys Insertion Sort (~4.5m 
 
 Sorted Data: Insertion sort runs almost instantly on sorted arrays (~7k ns) compared to random arrays.
 
-D. Analysis Questions
+## D. Analysis Questions
 
 1. Which sort is faster? Merge Sort is vastly faster on large arrays because its O(n log n) math scales much better than Insertion Sort's O(n²).
 
@@ -43,11 +43,11 @@ D. Analysis Questions
     
 6. Why Binary needs sorted arrays: It assumes the left half is smaller and the right half is larger. If unsorted, throwing away half the array might delete the target number.
     
-E. Screenshots
+## E. Screenshots
 
 [not yet]
 
-F. Reflection
+## F. Reflection
 
 I learned that Big-O notation is very real—O(n²) algorithms practically break on large datasets while O(n log n) handles them easily. The biggest difference between theory and practice is that on tiny arrays (10 elements), the "worse" algorithms are actually faster due to less setup overhead. The main challenge was realizing my Binary Search was returning -1 on random arrays until I realized it mathematically only works on pre-sorted data.
 
