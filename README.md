@@ -45,7 +45,8 @@ Sorted Data: Insertion sort runs almost instantly on sorted arrays (~7k ns) comp
     
 ## E. Screenshots
 
-[not yet]
+<img width="412" height="728" alt="изображение" src="https://github.com/user-attachments/assets/1f88ab16-b9f7-4e64-b017-2a62bd4574ca" />
+
 
 ## F. Reflection
 
